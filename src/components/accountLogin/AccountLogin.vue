@@ -28,6 +28,9 @@
 export default {
     name:'AccountLogin',
     components:{},
+    data(){
+        return {}
+    },
     props:{
         ruleForm:{
             type:Object,
@@ -50,4 +53,4 @@ export default {
         }
     }
 }
-</script>>
+</script>

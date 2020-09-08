@@ -5,3 +5,6 @@ Vue.component('backTop',BackTop)
 
 import AccountLogin from "../components/accountLogin/AccountLogin"
 Vue.component('accountLogin',AccountLogin)
+
+import PhoneLogin from "../components/phoneLogin/PhoneLogin"
+Vue.component('phoneLogin',PhoneLogin)

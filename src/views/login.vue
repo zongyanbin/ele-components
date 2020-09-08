@@ -6,14 +6,26 @@
         :rule-form="ruleForm" 
         :rules="rules"
         @submit="submit"
-        @errHandle="errHandle" ></accountLogin>
+        @errHandle="errHandle"
+         ></accountLogin>
+    </div>
+
+    <h1>短信验证码登录组件</h1>
+    <div class="phone">
+        <phone-login 
+        :rule-form="phoneForm" 
+        v-on:send="send"
+        v-on:submit="submit"
+        v-on:errHandle="errHandle"
+        :countDown="30"
+        ></phone-login>
     </div>
 </div>
 </template>
 <script>
 export default {
     name:'login',
-    components:[],
+    components:{},
     props:[],
     data(){
         return{
@@ -49,6 +61,10 @@ export default {
                     }
 
                 ]
+            },
+            phoneForm:{
+                phone:'',
+                code:''
             }
         }
     },
@@ -58,6 +74,10 @@ export default {
         },
         errHandle(){
             this.$message.error('表单填写错误，请检查')
+        },
+        send(){
+            //发送逻辑
+            this.$message.info('发送验证码成功')
         }
 
     }
@@ -69,7 +89,8 @@ export default {
     margin-left: 30px;
 
 }
-.account{
+
+.account, .phone{
     width:500px;
 }
 </style>
