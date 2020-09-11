@@ -18,8 +18,11 @@
         v-on:submit="submit"
         v-on:errHandle="errHandle"
         :countDown="30"
+     
         ></phone-login>
     </div>
+   <h1>计算computedAndWatch</h1>
+    <computedAndWatch></computedAndWatch>
 </div>
 </template>
 <script>

@@ -8,3 +8,6 @@ Vue.component('accountLogin',AccountLogin)
 
 import PhoneLogin from "../components/phoneLogin/PhoneLogin"
 Vue.component('phoneLogin',PhoneLogin)
+
+import ComputedAndWatch from "../components/ComputedAndWatch"
+Vue.component('computedAndWatch',ComputedAndWatch)

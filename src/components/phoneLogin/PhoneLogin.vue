@@ -40,6 +40,10 @@ export default {
             type:Number,
             default:60
       },
+      test:{
+          type:Number,
+          default:110
+      }
     },
     data(){
         let checkPhone = (rule,value,callback)=>{
@@ -79,6 +83,7 @@ export default {
                 if(errorMessage){
                     this.$mesage.error(errorMessage);
                 }else{
+                       alert(this.test)
                     //1.时间开始倒数
                     //2.按钮进入禁用状态
                     //3.如果倒计时结束 按钮可恢复状态 按钮文字变成重新发送 把倒计时时间重置
@@ -111,6 +116,7 @@ export default {
     },
     mounted(){
         this.time = this.countDown
+     
     }
 }
 </script>>

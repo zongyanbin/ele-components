@@ -9,6 +9,9 @@
       <el-button type="primary"
       v-on:click="goTo('/login')">去往登录页面</el-button>
       
+      <a v-bind:href="url">百度</a>
+      <div class="bg" v-bind:id="bg1">bg</div>
+
   </div>
   
 </template>
@@ -20,6 +23,12 @@ export default {
   name: 'Home',
   components: {
     
+  },
+  data(){
+    return {
+      url:'http://www.baidu.com',
+      bg1:'app-bind'
+    }
   },
   methods:{
     goTo(path){
