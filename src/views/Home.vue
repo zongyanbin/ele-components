@@ -16,6 +16,9 @@
           <ifAndShow></ifAndShow>
       <p>------------P15 16-数据动态遍历和展示(掌握) ListRender----------</p>
       <ListRender></ListRender>
+      <p>------------P17 18-列表搜索过滤-上(掌握) ListRenderTwo----------</p>
+      <ListRenderTwo></ListRenderTwo>
+      
   </div>
   
 </template>
@@ -24,12 +27,14 @@
 import classAndStyle  from '../components/vueBasis/ClassAndStyle'
 import ifAndShow  from '../components/vueBasis/IfAndShow'
 import ListRender from '../components/vueBasis/ListRender'
+import ListRenderTwo from '../components/vueBasis/ListRenderTwo'
 export default {
   name: 'Home',
   components: {
     classAndStyle,
     ifAndShow,
-    ListRender
+    ListRender,
+    ListRenderTwo
   },
   data(){
     return {
