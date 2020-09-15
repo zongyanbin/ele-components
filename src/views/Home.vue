@@ -18,7 +18,11 @@
       <ListRender></ListRender>
       <p>------------P17 18-列表搜索过滤-上(掌握) ListRenderTwo----------</p>
       <ListRenderTwo></ListRenderTwo>
-      
+       <p>------------P20 21-Vue中其它的指令-上(掌握) OtherInstruct----------</p>
+      <OtherInstruct></OtherInstruct>
+
+           <p>-----------技术总结合成demo person add delete-----------</p>
+      <PersonAddDell></PersonAddDell>
   </div>
   
 </template>
@@ -28,13 +32,17 @@ import classAndStyle  from '../components/vueBasis/ClassAndStyle'
 import ifAndShow  from '../components/vueBasis/IfAndShow'
 import ListRender from '../components/vueBasis/ListRender'
 import ListRenderTwo from '../components/vueBasis/ListRenderTwo'
+import OtherInstruct from '../components/vueBasis/OtherInstruct' //指令
+import PersonAddDell from '../components/vueBasis/PersonAddDell'//添加用户 删除用户
 export default {
   name: 'Home',
   components: {
     classAndStyle,
     ifAndShow,
     ListRender,
-    ListRenderTwo
+    ListRenderTwo,
+    OtherInstruct,//指令
+    PersonAddDell
   },
   data(){
     return {

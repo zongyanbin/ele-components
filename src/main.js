@@ -39,6 +39,15 @@ Vue.config.productionTip = false
  * 
  * 
  */
+
+ /**
+  * 注册全局指令
+  */
+ Vue.directive('upper-word',(el,binding)=>{
+   console.log(el,binding);
+   el.textContent = binding.value.toUpperCase();
+ })
+
 new Vue({
   router,
   render: h => h(App)
