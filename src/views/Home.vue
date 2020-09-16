@@ -21,8 +21,14 @@
        <p>------------P20 21-Vue中其它的指令-上(掌握) OtherInstruct----------</p>
       <OtherInstruct></OtherInstruct>
 
-           <p>-----------技术总结合成demo person add delete-----------</p>
+      <p>-----------技术总结合成demo person add delete-----------</p>
       <PersonAddDell></PersonAddDell>
+
+      <p>-----------@click.prevent="aClick" 禁止跳转 href  阻止默认事件  @click.stop="btnClick   防止冒泡 .stop----------</p>
+      <DealEvents></DealEvents>
+      
+      <p>-----------全局过滤器和局部过滤器----------</p>
+      <LkFilters></LkFilters>
   </div>
   
 </template>
@@ -34,6 +40,8 @@ import ListRender from '../components/vueBasis/ListRender'
 import ListRenderTwo from '../components/vueBasis/ListRenderTwo'
 import OtherInstruct from '../components/vueBasis/OtherInstruct' //指令
 import PersonAddDell from '../components/vueBasis/PersonAddDell'//添加用户 删除用户
+import DealEvents from '../components/vueBasis/DealEvents'//事件
+import LkFilters from '../components/vueBasis/LkFilters'//
 export default {
   name: 'Home',
   components: {
@@ -42,7 +50,9 @@ export default {
     ListRender,
     ListRenderTwo,
     OtherInstruct,//指令
-    PersonAddDell
+    PersonAddDell,//添加用户删除用户
+    DealEvents,
+    LkFilters,
   },
   data(){
     return {

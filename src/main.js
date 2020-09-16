@@ -41,6 +41,14 @@ Vue.config.productionTip = false
  */
 
  /**
+  *注册全局过滤器 
+  */
+ Vue.filter('wholeMoneyFormat',(value)=>{
+    return '￥'+ Number(value).toFixed(4); //过滤器
+ })
+
+ //npm i moment --save 格式化日期
+ /**
   * 注册全局指令
   */
  Vue.directive('upper-word',(el,binding)=>{
@@ -52,3 +60,4 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
+
