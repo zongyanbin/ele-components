@@ -34,7 +34,28 @@ Vue.use(VueRouter)
     name:'login',
     component:()=>import('../views/login')
 
-  }
+  },
+  {
+    path:'/Aloss',
+    name:'aloss',
+    component:()=>import('../views/AlOss.vue')
+  },
+  {
+    path:'/download',
+    name:'Download',
+    component:()=>import('../views/Download.vue')
+  },
+  {
+    path:'/vs',
+    name:'vs',
+    component:()=>import('../views/Vs.vue')
+  },
+  {
+    path:'/circle',
+    name:'circle',
+    component:()=>import('../views/Circle.vue')
+  },
+ 
 ]
 
 const router = new VueRouter({

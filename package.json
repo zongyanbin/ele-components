@@ -8,11 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ali-oss": "^6.10.0",
+    "animate.css": "^4.1.1",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.2",
     "moment": "^2.28.0",
     "shortid": "^2.2.15",
     "vue": "^2.6.11",
+    "vue-ele-upload-file": "0.0.6",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {

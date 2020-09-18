@@ -29,6 +29,12 @@
       
       <p>-----------全局过滤器和局部过滤器----------</p>
       <LkFilters></LkFilters>
+      <p>-----------过渡----------</p>
+      <TransitionAndAnimate></TransitionAndAnimate>
+       <p>-----------过渡与动画----------</p>
+      <TransitionAndAnimateTwo></TransitionAndAnimateTwo>
+          <p>-----------第三方动画 npm install animate.css --save----------</p>
+      <TransitionAndAnimateThree></TransitionAndAnimateThree>
   </div>
   
 </template>
@@ -41,7 +47,10 @@ import ListRenderTwo from '../components/vueBasis/ListRenderTwo'
 import OtherInstruct from '../components/vueBasis/OtherInstruct' //指令
 import PersonAddDell from '../components/vueBasis/PersonAddDell'//添加用户 删除用户
 import DealEvents from '../components/vueBasis/DealEvents'//事件
-import LkFilters from '../components/vueBasis/LkFilters'//
+import LkFilters from '../components/vueBasis/LkFilters'//过滤
+import TransitionAndAnimate from '../components/vueBasis/TransitionAndAnimate'//过渡与动画
+import TransitionAndAnimateTwo from '../components/vueBasis/TransitionAndAnimateTwo'//动画
+import TransitionAndAnimateThree from '../components/vueBasis/TransitionAndAnimateThree'//第三方类库动画
 export default {
   name: 'Home',
   components: {
@@ -53,6 +62,9 @@ export default {
     PersonAddDell,//添加用户删除用户
     DealEvents,
     LkFilters,
+    TransitionAndAnimate,//过渡
+    TransitionAndAnimateTwo,
+    TransitionAndAnimateThree// 第三方动画
   },
   data(){
     return {
