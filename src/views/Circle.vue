@@ -1,42 +1,46 @@
 <template>
     <div>
-        生命周期
+        <LifeCircle></LifeCircle>
     </div>
 </template>
 
 <script>
+import LifeCircle from '../components/vueBasis/LifeCircle'
 export default {
-    name:'LifeCircle',
-    beforeCreate(){
-        console.log('1:beforeCreate()')
+    name:'title_LifeCircle',
+    components:{
+        LifeCircle
     },
-    data(){
-        return {}
-    },
-    methods:{
+    // beforeCreate(){
+    //     console.log('1:beforeCreate()')
+    // },
+    // data(){
+    //     return {}
+    // },
+    // methods:{
 
-    },
-    created(){
-        console.log('2:created()')
-    },
-    beforeMount(){
-        console.log('3:beforeMount()')
-    },
-    mounted(){
-        console.log('4:mounted()')
-    },
-    beforeUpdate(){
-        console.log('5:beforeUpdate()')
-    },
-    updated(){
-        console.log('6:updated()')
-    },
-    beforeDestroy(){
-         console.log('7:beforeDestroy()')
-    },
-    destroyed(){
-         console.log('8:destroyed()')
-    }
+    // },
+    // created(){
+    //     console.log('2:created()')
+    // },
+    // beforeMount(){
+    //     console.log('3:beforeMount()')
+    // },
+    // mounted(){
+    //     console.log('4:mounted()')
+    // },
+    // beforeUpdate(){
+    //     console.log('5:beforeUpdate()')
+    // },
+    // updated(){
+    //     console.log('6:updated()')
+    // },
+    // beforeDestroy(){
+    //      console.log('7:beforeDestroy()')
+    // },
+    // destroyed(){
+    //      console.log('8:destroyed()')
+    // }
 
 }
 </script>

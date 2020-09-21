@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-import pic from '@/assets/1.jpg'
+import pic from '@/assets/logo.png'
 export default {
     name:'TransitionAndAnimate',
     data(){
