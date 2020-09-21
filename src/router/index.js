@@ -55,6 +55,11 @@ Vue.use(VueRouter)
     name:'circle',
     component:()=>import('../views/Circle.vue')
   },
+  {
+    path:'/todolist',
+    name:'todolist',
+    component:()=>import('../views/ToDoList.vue')
+  },
  
 ]
 

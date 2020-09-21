@@ -35,6 +35,14 @@
       <TransitionAndAnimateTwo></TransitionAndAnimateTwo>
           <p>-----------第三方动画 npm install animate.css --save----------</p>
       <TransitionAndAnimateThree></TransitionAndAnimateThree>
+
+     <p>-------Props----组件的通信--父组件向子组件传递 参数 字符串 数组 对象 方法--------</p>
+     <PropsComponent name='小斌哥哥' :age='18' sex='女' :person="p" :logPerson="logPerson"></PropsComponent>
+    <p>-------自定义事件----组件的通信--子组件向父组件传递 参数 字符串 数组 对象 方法--------</p>
+    <CustomEvents @btnClick="deleteP"></CustomEvents>
+     <p class="word" ref="word">
+       即将被删除
+     </p>
   </div>
   
 </template>
@@ -51,6 +59,8 @@ import LkFilters from '../components/vueBasis/LkFilters'//过滤
 import TransitionAndAnimate from '../components/vueBasis/TransitionAndAnimate'//过渡与动画
 import TransitionAndAnimateTwo from '../components/vueBasis/TransitionAndAnimateTwo'//动画
 import TransitionAndAnimateThree from '../components/vueBasis/TransitionAndAnimateThree'//第三方类库动画
+import PropsComponent from '../components/vueBasis/PropsComponent'//组件的通信 父组件传递子组件
+import CustomEvents from '../components/vueBasis/CustomEvents'
 export default {
   name: 'Home',
   components: {
@@ -64,18 +74,43 @@ export default {
     LkFilters,
     TransitionAndAnimate,//过渡
     TransitionAndAnimateTwo,
-    TransitionAndAnimateThree// 第三方动画
+    TransitionAndAnimateThree,// 第三方动画
+    PropsComponent,//父组件传递给子组件
+    CustomEvents, //子组件传递给父组件
   },
   data(){
     return {
       url:'http://www.baidu.com',
       bg1:'app-bind',
+      p:{
+        name:'张三丰',
+        age:600
+      }
     }
   },
   methods:{
     goTo(path){
       this.$router.push(path) //跳转
+    },
+    logPerson(name,age){
+      alert(`姓名： ${name},年龄:${age}`)
+    },
+    deleteP(args){
+      console.log(args)
+      this.$refs.word.remove()
     }
   }
 }
 </script>
+<style>
+.word{
+   margin: auto;
+  width: 300px;
+  height: 200px;
+  background-color: red;
+  color: #fff;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+</style>

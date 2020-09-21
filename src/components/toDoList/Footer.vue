@@ -1,0 +1,31 @@
+<template>
+    <div id="app">
+    </div>      
+</template>
+<script>
+export default {
+    name:''
+}
+</script>
+<style scoped>
+.todo-footer{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 6px;
+    margin-top: 5px;
+}
+.todo-footer label{
+    display: inline-block;
+    margin-right: 20px;
+    cursor:pointer
+}
+.todo-footer label input{
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+}
+.todo-footer .button{
+    float:right;
+    margin-top: 5px;
+}
+</style>
