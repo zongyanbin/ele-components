@@ -2,9 +2,9 @@
     <div>
         <div class="todo-container">
             <div class="todo-wrap">
-                <Header></Header>
-                <List :todos='todos'></List>
-                <Footer></Footer>
+                <Header :addTodo='addTodo'></Header>
+                <List :todos='todos' :delTodo='delTodo'></List>
+                <Footer :todos='todos' :selectedAllTodo="selectedAllTodo" :delFinishedTodos="delFinishedTodos"></Footer>
             </div>
         </div>
     </div>   
@@ -29,10 +29,29 @@ export default {
                 {title:'学习vue得组件通信',finished:false},
                 {title:'学习vuex得使用',finished:false},
                 {title:'学习php',finished:false},
-                {title:'学习java',finished:false},
+                {title:'学习java',finished:true},
                 {title:'学习ps',finished:false},
                 {title:'学习to',finished:false},                
             ]
+        }
+    },
+    methods:{
+        //插入一条数据
+        addTodo(todo){
+            this.todos.unshift(todo)
+        },
+        //根据索引删除一条记录
+        delTodo(index){
+            this.todos.splice(index,1)
+        },
+        //是否选中所有
+        selectedAllTodo(isCheck){
+            this.todos.forEach(todo=>{
+                todo.finished = isCheck
+            })
+        },
+        delFinishedTodos(){
+            this.todos = this.todos.filter(todo=>!todo.finished) //false得都留下来放到新数组里
         }
     }
 }

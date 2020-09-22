@@ -1,11 +1,15 @@
 <template>
     <div>
-        <li>
+        <li
+        @mouseenter="dealShow(true)"
+        @mouseleave="dealShow(false)"
+        :style="{backgroundColor:bgColor}"
+        >
             <label>
                 <input type="checkbox" v-model="todo.finished">
                 <span>{{todo.title}}</span>
             </label>
-            <button class="btn btn-warning">删除</button>
+            <button v-show="isShowDelButton" class="btn btn-warning" @click="delItem">删除</button>
         </li>    
     </div>      
 </template>
@@ -13,7 +17,29 @@
 export default {
     name:'nameitem',
     props:{
-        todo:Object
+        todo:Object,
+        index:Number, //当前任务在总任务数组中的下标位置
+        delTodo:Function
+    },
+    data(){
+        return {
+            isShowDelButton:false, //false 隐藏  true 显示
+            bgColor:'#fff'
+        }
+    },
+    methods:{
+        dealShow(isShow=false){
+            //控制按钮显示和隐藏
+            this.isShowDelButton =isShow;
+            //控制背景颜色
+            this.bgColor = isShow?'#ddd':'#fff';
+        },
+        delItem(){
+            if(window.confirm(`您确定删除${this.todo.title}吗？`)){
+                this.delTodo(this.index)
+            }
+
+        }
     }
 }
 </script>
@@ -25,7 +51,9 @@ li{
     padding: 0 5px;
     border-bottom: 1px solid #ddd;
 }
-
+li label{
+    float: left;
+}
 
 li label li input{
     vertical-align: middle;

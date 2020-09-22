@@ -1,10 +1,33 @@
 <template>
-    <div id="app">
+    <div class="todo-footer">
+        <label><input type="checkbox" v-model="isCheck"></label>
+        <span>
+            <span>已经完成{{finishedCount}}件</span>/总计{{todos.length}}件
+        </span>
+        <button class="btn btn-warning" @click="delFinishedTodos">清除已经完成的任务</button>
     </div>      
 </template>
 <script>
 export default {
-    name:''
+    name:'Footer',
+    props:{
+        todos:Array,
+        selectedAllTodo:Function,
+        delFinishedTodos:Function
+    },
+    computed:{
+        finishedCount(){
+            return this.todos.reduce((total,todo)=>total+(todo.finished?1:0),0)
+        },
+        isCheck:{
+            get(){
+                return this.finishedCount ===this.todos.length && this.todos.length>0
+            },
+            set(value){
+              this.selectedAllTodo(value)
+            }
+        }
+    }
 }
 </script>
 <style scoped>

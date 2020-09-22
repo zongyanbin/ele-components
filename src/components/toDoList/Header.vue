@@ -1,13 +1,41 @@
 <template>
     <div>
         <div class="todo-header">
-            <input type="text" placeholder="请输入今天得任务清单，按回车确认">
+            <input type="text" placeholder="请输入今天得任务清单，按回车确认"
+             v-model="title"
+             @keyup.enter="addItem"
+             >
         </div>
     </div>      
 </template>
 <script>
 export default {
-    name:''
+    name:'Header',
+    props:{
+        addTodo:Function
+    },
+    data(){
+        return {
+            title:'',
+        }
+    },
+    methods:{
+        addItem(){
+            //1.判断是否为空
+            const title = this. title.trim()
+            if(!title){
+                alert('输出的任务不能为空！')
+                return false
+            }else{
+            //2.生成一个todo对象
+            let todo = {title,finished:false};
+            //3.调用 父组件的插入方法
+            this.addTodo(todo)
+            //3.清空输入框
+            this.title=''
+            }
+        }
+    }
 }
 </script>
 <style scoped>
