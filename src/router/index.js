@@ -60,6 +60,11 @@ Vue.use(VueRouter)
     name:'todolist',
     component:()=>import('../views/ToDoList.vue')
   },
+  {
+    path:'/customeventstodolist',
+    name:'customeventstodolist',
+    component:()=>import('../views/CustomEventsToDoList.vue')
+  },
  
 ]
 
