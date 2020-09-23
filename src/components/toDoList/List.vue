@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="todos">
       <ul class="todo-main">
           <Item v-for="(todo,index) in todos" :key="index" :todo='todo' :index='index' :delTodo='delTodo'></Item>
       </ul>    

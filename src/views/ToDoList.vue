@@ -12,6 +12,9 @@
 <script>
 //引入
 
+//工具类
+import localStorageUtil from '../util/localStorageUtil'
+
 import '../assets/index.css';
 import Header from '../components/toDoList/Header'
 import List from '../components/toDoList/List'
@@ -25,14 +28,17 @@ export default {
     },
     data(){
         return{
-            todos:[
-                {title:'学习vue得组件通信',finished:false},
-                {title:'学习vuex得使用',finished:false},
-                {title:'学习php',finished:false},
-                {title:'学习java',finished:true},
-                {title:'学习ps',finished:false},
-                {title:'学习to',finished:false},                
-            ]
+                //todos:[
+                
+                // {title:'学习vue得组件通信',finished:false},
+                // {title:'学习vuex得使用',finished:false},
+                // {title:'学习php',finished:false},
+                // {title:'学习java',finished:true},
+                // {title:'学习ps',finished:false},
+                // {title:'学习to',finished:false},                
+          //  ]
+      
+           todos:localStorageUtil.readTodos()
         }
     },
     methods:{
@@ -53,6 +59,14 @@ export default {
         delFinishedTodos(){
             this.todos = this.todos.filter(todo=>!todo.finished) //false得都留下来放到新数组里
         }
+    },
+    watch:{
+        //深度监视 还能监视 数组对象里的属性值得变化
+        todos:{
+            handler:localStorageUtil.saveTodos,
+            deep:true, //深度监视  true能监听对象属性值变化  能监听数组值变化  
+            // immediate:true //true 已进入执行 handler里的函数  false 值改变执行handler函数
+        }
     }
 }
 </script>
@@ -67,3 +81,4 @@ export default {
     border-radius: 5px;
 }
 </style>
+        
