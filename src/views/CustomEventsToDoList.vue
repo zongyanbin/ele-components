@@ -14,11 +14,12 @@
 
 //工具类
 import localStorageUtil from '../util/localStorageUtil'
+import PubSub from 'pubsub-js'
 
 import '../assets/index.css';
 import Header from '../components/toDoList/CustomEventsHeader'
-import List from '../components/toDoList/List'
-import Footer from '../components/toDoList/Footer'
+import List from '../components/toDoList/CustomEventsList'
+import Footer from '../components/toDoList/CustomEventsFooter'
 export default {
     name:'nameToDuList',
     components:{
@@ -44,6 +45,12 @@ export default {
     mounted(){
         //绑定自定义事件（addTodo监听）      
         this.$refs.header.$on('addTodo',this.addTodo)// 父组件绑定接受子组件数据
+
+        //订阅消息(delTodo)msg 方法  token 参数
+        PubSub.subscribe('delTodo',(msg,token)=>{
+            console.log(msg,token)
+            this.delTodo(token)
+        })
     },
     methods:{
         //插入一条数据
