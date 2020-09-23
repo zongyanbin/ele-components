@@ -4,7 +4,11 @@
             <div class="todo-wrap">
                 <Header ref="header"></Header>
                 <List :todos='todos' :delTodo='delTodo'></List>
-                <Footer :todos='todos' :selectedAllTodo="selectedAllTodo" :delFinishedTodos="delFinishedTodos"></Footer>
+                <Footer>
+                       <input slot="isCheck" type="checkbox" v-model="isCheck">
+                        <span slot="finish">已经完成{{finishedCount}}件/总计{{todos.length}}件</span>
+                        <button slot="delete" class="btn btn-warning" @click="delFinishedTodos">清除已经完成的任务</button>
+                </Footer>
             </div>
         </div>
     </div>   
@@ -77,6 +81,19 @@ export default {
             handler:localStorageUtil.saveTodos,
             deep:true, //深度监视  true能监听对象属性值变化  能监听数组值变化  
             // immediate:true //true 已进入执行 handler里的函数  false 值改变执行handler函数
+        }
+    },
+    computed:{
+        finishedCount(){
+            return this.todos.reduce((total,todo)=>total+(todo.finished?1:0),0)
+        },
+        isCheck:{
+            get(){
+                return this.finishedCount ===this.todos.length && this.todos.length>0
+            },
+            set(value){
+              this.selectedAllTodo(value)
+            }
         }
     }
 }
