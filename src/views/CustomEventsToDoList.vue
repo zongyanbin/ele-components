@@ -83,7 +83,7 @@ export default {
             // immediate:true //true 已进入执行 handler里的函数  false 值改变执行handler函数
         }
     },
-    computed:{
+    computed:{  //插槽
         finishedCount(){
             return this.todos.reduce((total,todo)=>total+(todo.finished?1:0),0)
         },

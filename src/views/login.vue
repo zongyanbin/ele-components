@@ -74,6 +74,17 @@ export default {
     methods:{
         submit(){
             this.$message.success('提交成功')
+            //1.登录成功
+            window.isLogin=true
+            //2.获取回调地址
+            const redirect=this.$route.query.redirect
+            if(redirect){ //有回调地址
+                this.$router.push(redirect)
+            }else{//没有回调地址
+                //去首页
+                this.$router.replace('/')
+            }           
+            
         },
         errHandle(){
             this.$message.error('表单填写错误，请检查')
